@@ -108,7 +108,7 @@ public class QlkhRestfulService {
 		RestfulResponse res=new RestfulResponse();
 		try {
 			conn=getConnection();
-			String sql = "call ADD_CUSTOMER(? , ? , ? , ? )";
+			String sql = "call ADD_CUSTOMER(? , ? , ? , ? , ?)";
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, maKhachHang);
 			statement.setString(1, maKhachHang);
@@ -155,7 +155,7 @@ public class QlkhRestfulService {
 		RestfulResponse res=new RestfulResponse();
 		try {
 			conn=getConnection();
-			String sql = "call UPDATE_CUSTOMER(? , ? , ? , ? )";
+			String sql = "call UPDATE_CUSTOMER(? , ? , ? , ? , ?)";
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, maKhachHang);
 			statement.setString(2, tenKhachHang);
@@ -231,7 +231,7 @@ public class QlkhRestfulService {
 	}
 	
 	@GET
-	@Path("/findCustomer/{a}/{b}")
+	@Path("/deletecustomer/{a}/{b}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List findCustomer(@PathParam ("a") String tenKhachHang,							  
 							  @PathParam ("e") String idNguoiDung) {
