@@ -230,34 +230,6 @@ public class QlkhRestfulService {
 		return res;
 	}
 	
-	@GET
-	@Path("/deletecustomer/{a}/{b}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List findCustomer(@PathParam ("a") String tenKhachHang,							  
-							  @PathParam ("e") String idNguoiDung) {
-		Connection conn=null;
-		try {
-			conn=getConnection();
-			String sql = "call find_CUSTOMER(? , ? )";
-			//List<Map<String, Object>> listCustomer =
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, tenKhachHang);			
-			statement.setInt(2, Integer.parseInt(idNguoiDung));
-			
-			List<Map<String, Object>> listCustomer= (List<Map<String, Object>>) statement.executeQuery();		
-			return listCustomer;
-		}catch (Exception e) {
-			return null;
-		}finally {
-			if(conn!=null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					e.printStackTrace();					
-				}
-			}
-		}
-		 
-	} 
+	
 	
 }
