@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="utf-8">
   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Trang chủ</title>
+		<title>${ TITLE } | Hệ thống quản lý khách hàng</title>
 		<!-- Tell the browser to be responsive to screen width -->
   		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	  	<!-- shortcut icon -->
@@ -32,7 +32,7 @@
 		  <header class="main-header">
 		
 		    <!-- Logo -->
-		    <a href="." class="logo">
+		    <a href="HomeController" class="logo">
 		      <!-- mini logo for sidebar mini 50x50 pixels -->
 		      <span class="logo-mini"><img src="static/dist/img/vnpt-logo-white.png"></span>
 		      <!-- logo for regular state and mobile devices -->
@@ -67,25 +67,24 @@
 		              <!-- The user image in the navbar-->
 		              <img src="static/dist/img/user-male-160.jpg" class="user-image" alt="User Image">
 		              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-		              <span class="hidden-xs">Huynh Thanh Du</span>
+		              <span class="hidden-xs">${USER.getHoTen()}</span>
 		            </a>
 		            <ul class="dropdown-menu">
 		              <!-- The user image in the menu -->
 		              <li class="user-header">
 		                <img src="static/dist/img/user-male-160.jpg" class="img-circle" alt="User Image">
 		                <p>
-		                  <span>Huynh Thanh Du</span>
-		                  <small>Huynh Thanh Du</small>
+		                  <span>${USER.getHoTen()}</span>
+		                  <small>(${USER.getTenDangNhap()})</small>
 		                </p>
-		
 		              </li>
 		              <!-- Menu Footer-->
 		              <li class="user-footer">
 		                <div class="pull-left">
-		                  <a href="/thong-tin-ca-nhan" class="btn btn-default btn-flat">Tài khoản</a>
+		                  <a href="#" class="btn btn-default btn-flat">Tài khoản</a>
 		                </div>
 		                <div class="pull-right">
-		                  <a href="/logout" class="btn btn-default btn-flat">Đăng xuất</a>
+		                  <a href="LogOutController" class="btn btn-default btn-flat">Đăng xuất</a>
 		                </div>
 		              </li>
 		            </ul>
@@ -120,8 +119,8 @@
 		      <ul class="sidebar-menu tree" data-widget="tree">
 		        <li class="header">CHỨC NĂNG</li>
 		        <!-- Optionally, you can add icons to the links -->
-		        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-		        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+		        <li class="active"><a href="HomeController"><i class="fa fa-hand-o-right"></i> <span>Quản lý khách hàng</span></a></li>
+		        <!-- <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li> -->
 		      </ul>
 		      <!-- /.sidebar-menu -->
 		    </section>
@@ -132,13 +131,14 @@
 		  <div class="content-wrapper">
 		    <!-- Content Header (Page header) -->
 		    <section class="content-header">
-		      <h1>H1 Page Title</h1>
+		      <h1>${ TITLE }</h1>
 		    </section>
 		
 		    <!-- Main content -->
 		    <section class="content container-fluid">
 		
 		      <!-- Include page content here -->
+		      <jsp:include page="inc/${ CONTENT }.jsp" flush="true" />
 		
 		    </section>
 		    <!-- /.content -->

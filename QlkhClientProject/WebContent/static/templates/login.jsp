@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Đăng nhập hệ thống</title>
+		<title>Đăng nhập | Hệ thống quản lý khách hàng</title>
 		<!-- Tell the browser to be responsive to screen width -->
 	  	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	  	<!-- shortcut icon -->
@@ -49,9 +49,9 @@
 		  </div>
 		  <!-- /.login-logo -->
 		  <div class="login-box-body">
-		    <p class="login-box-msg"><span>Đăng nhập tài khoản</span></p>
+		    <p class="login-box-msg">${ MSG }</p>
 		
-		    <form action="/dang-nhap" method="post">
+		    <form action="" method="post">
 		      <div class="form-group has-feedback">
 		        <input type="text" class="form-control" placeholder="Tên đăng nhập" name="username">
 		        <span class="fa fa-envelope form-control-feedback"></span>

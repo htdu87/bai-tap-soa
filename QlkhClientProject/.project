@@ -3,6 +3,7 @@
 	<name>QlkhClientProject</name>
 	<comment></comment>
 	<projects>
+		<project>QlkhBaseProject</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
